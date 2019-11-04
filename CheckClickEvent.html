@@ -1,0 +1,48 @@
+<!-- Coded by MacTavish -->
+<!-- Find me on Discord using MacTavish#8517 -->
+<!-- This code is meant to show only click event for testing of macro of my mouse XD -->
+<!-- Probably I will update it to show all mouse events in near future :) -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Check Click Event</title>
+    <style media="screen">
+      .showEvent {
+        width: 90%;
+        height: 570px;
+        border: 3px solid green;
+        overflow: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn" type="button" name="button" onmousedown="reveal(event)">Check your Events</button>
+    <div id="writeHere" class="showEvent">
+
+    </div>
+  </body>
+</html>
+<script type="text/javascript">
+var counter= 0;
+  function reveal(event) {
+    var click= event.button;
+    if (click == 0) {
+      counter= counter+1;
+      var newClick= "Click Count = "+ counter +" , \u00A0\u00A0Button = Left Mouse Button";
+      console.log(newClick);
+      node= document.createElement("p");
+      br= document.createElement("br");
+      var textNode= document.createTextNode(newClick);
+      document.getElementById('writeHere').appendChild(textNode);
+      document.getElementById('writeHere').appendChild(br);
+    }
+    else {
+      node= document.createElement("p");
+      br= document.createElement("br");
+      var textNode= document.createTextNode("Fucking Invalid click, Press left Mouse button Only");
+      document.getElementById('writeHere').appendChild(textNode);
+      document.getElementById('writeHere').appendChild(br);
+    }
+  }
+</script>
